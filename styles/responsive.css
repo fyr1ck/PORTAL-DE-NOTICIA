@@ -1,0 +1,78 @@
+img {
+    display: block;
+    height: auto;
+}
+
+.container {
+    padding-inline: clamp(16px, 5vw, 32px);
+}
+
+#feature .text-2x1 {
+    font-size: clamp(16px, 5vw, 32px);
+}
+
+#weeky > div {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+#ai img {
+    width: clamp(112px, 22vw, 176px);
+}
+
+#ai article > div,
+#more article > div,
+#weekly figure,
+#featured .card figcaption {
+    min-width: 0;
+}
+
+@media (max-width: 1024px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "featured"
+        "weekly"
+        "ai"
+        "aside";
+        row-gap: 56px;
+    }
+
+    #weekly > div {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    #secondary {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #featured {
+        grid-auto-flow: row;
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        row-gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #primary div:nth-child(2) img {
+        max-width: clamp(110px, 34vw, 160px);
+    }
+
+    #weekly > div {
+        gap: 12px;
+    }
+}
